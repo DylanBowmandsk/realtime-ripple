@@ -8,7 +8,8 @@ const SendBar = ({messages, setMessages}) => {
         let temp = [...messages,messageInput]
         setMessages(temp)
         setMessageInput("")
-        
+        let input = document.getElementById("messageInput")
+        input.value = ""
     }
 
     return(
@@ -18,7 +19,5 @@ const SendBar = ({messages, setMessages}) => {
         </div>
     )
 }
-
-
 
 export default SendBar
