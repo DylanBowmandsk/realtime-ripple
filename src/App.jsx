@@ -3,19 +3,8 @@ import Messages from "./Messages";
 import { useState } from "react";
 import {firebaseConfig}  from "./firebaseConfig";
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
-import { collection, addDoc } from "firebase/firestore"; 
+
 initializeApp(firebaseConfig);
-
-const db = getFirestore();
-
-const docRef = addDoc(collection(db, "users"), {
-  first: "Ada",
-  last: "Lovelace",
-  born: 1815
-});
-
-
 
 function App() {
 

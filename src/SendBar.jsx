@@ -1,10 +1,15 @@
 import { useState } from "react"
+import { collection, addDoc } from "firebase/firestore"; 
+import { getFirestore } from "firebase/firestore"
 
 const SendBar = ({messages, setMessages}) => {
 
     const [messageInput, setMessageInput] = useState()
+    const db = getFirestore();
 
     const sendMessage = () => {
+        addDoc(collection(db, "chats"), {message: messageInput})
+
         let temp = [...messages,messageInput]
         setMessages(temp)
         setMessageInput("")
