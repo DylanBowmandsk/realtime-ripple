@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { collection, addDoc,getFirestore } from "firebase/firestore"; 
+import { collection, addDoc,getFirestore} from "firebase/firestore"; 
 
 const SendBar = () => {
     //state for chat text input field
@@ -9,7 +9,8 @@ const SendBar = () => {
 
     //adds document to chat collection and rests input field
     const sendMessage = () => {
-        addDoc(collection(db, "chats"), {message: messageInput})
+        addDoc(collection(db, "chats"), {message: messageInput,
+        datetime: Date()})
         let input = document.getElementById("messageInput")
         input.value = ""
     }

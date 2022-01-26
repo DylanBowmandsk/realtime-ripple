@@ -1,11 +1,13 @@
-import { collection,getFirestore } from "firebase/firestore"; 
+import { collection,getFirestore, query, orderBy } from "firebase/firestore"; 
 import { useCollection } from 'react-firebase-hooks/firestore';
 
 const Messages = () => {
     //retrieves firebase database
     const db = getFirestore();
     //loads chat collection with realtime hooks
-    const [messages, loading, error] = useCollection(collection(db, 'chats'))
+
+    let q = query(collection(db, 'chats'),orderBy("datetime","asc"))
+    const [messages, loading, error] = useCollection(q)
 
     return(
         <div>
