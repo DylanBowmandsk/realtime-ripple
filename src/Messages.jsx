@@ -6,8 +6,7 @@ const Messages = () => {
     const db = getFirestore();
     //loads chat collection with realtime hooks
 
-    let q = query(collection(db, 'chats'),orderBy("datetime","asc"))
-    const [messages, loading, error] = useCollection(q)
+    const [messages] = useCollection(query(collection(db, 'chats'),orderBy("datetime","asc")))
 
     return(
         <div>
