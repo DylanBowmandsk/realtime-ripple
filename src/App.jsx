@@ -27,7 +27,10 @@ function App() {
   return (
     <div className="App">
         <div className="h-screen w-1/3 flex flex-col justify-end mx-auto">
-          <button onClick={signIn}>sing in</button>
+          <button onClick={signIn} className="p-4 rounded bg-slate-50">
+          <img className="inline h-6 w-6 mr-3" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1024px-Google_%22G%22_Logo.svg.png"></img>
+          <span>Login with Google</span>
+          </button>
           <Messages/>
           <SendBar user={user}/>
         </div>
