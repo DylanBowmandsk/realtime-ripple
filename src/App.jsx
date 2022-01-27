@@ -12,6 +12,7 @@ function App() {
 
   const [user, setUname] = useState()
 
+  //authenticates user and stores dependent data in state object
   const signIn = () => {
     const auth = getAuth()
     const gProvider = new GoogleAuthProvider()
