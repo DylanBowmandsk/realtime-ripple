@@ -12,6 +12,7 @@ const SendBar = ({user}) => {
         
         addDoc(collection(db, "chats"), {message: messageInput,
             username: user.username,
+            photoURL: user.photoURL,
             datetime: Date()})
         let input = document.getElementById("messageInput")
         input.value = ""

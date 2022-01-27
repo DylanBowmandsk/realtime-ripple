@@ -19,8 +19,9 @@ function App() {
     signInWithPopup(auth, gProvider).then(res => {
       let u = {username: res.user.displayName,
       email: res.user.email,
-      verified: res.user.emailVerified}
+      photoURL: res.user.photoURL}
       setUname(u)
+      console.log(u)
     }) 
   }
 
