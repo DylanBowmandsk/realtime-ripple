@@ -7,17 +7,18 @@ const Messages = () => {
     //loads chat collection with realtime hooks
 
     const [messages] = useCollection(query(collection(db, 'chats'),orderBy("datetime","asc")))
-
-    return(
-        <div>
-            {messages && messages.docs.map((doc, key) => {
-                return(
-                    <div key={key}>
-                        <p>{doc.data().message}</p>
-                    </div>
-                )
-            })}
-        </div>
-    )
+    
+        return(
+            <div>
+                {messages && messages.docs.map((doc, key) => {
+                    return(
+                        <div key={key} className="flex flex-row justify-between">
+                            <span>{doc.data().message}</span>
+                            <span>{doc.data().datetime.slice(16,21)}</span>
+                        </div>
+                    )
+                })}
+            </div>
+        )
 }
 export default Messages
