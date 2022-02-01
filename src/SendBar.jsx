@@ -12,6 +12,7 @@ const SendBar = ({user}) => {
         
         addDoc(collection(db, "chats"), {message: messageInput,
             username: user.username,
+            email: user.email,
             photoURL: user.photoURL,
             datetime: Date()})
         let input = document.getElementById("messageInput")
@@ -19,9 +20,9 @@ const SendBar = ({user}) => {
     }
 
         return(
-            <div className="">
-                <input id="messageInput" onChange={(e) => setMessageInput(e.target.value)} className="w-2/3" type="text" placeholder="Enter message"/>
-                <button onClick={sendMessage} className="">Send</button>
+            <div id="sendbar" className="bg-sendbar px-6 py-3">
+                <input id="messageInput" onChange={(e) => setMessageInput(e.target.value)} className="w-3/4 px-6 py-3 rounded-full mr-4" type="text" placeholder="Enter message"/>
+                <button onClick={sendMessage} className="rounded-full bg-primary text-white px-10 py-3">Send</button>
             </div>
         )
 }

@@ -13,10 +13,10 @@ function App() {
   const [user, setUser] = useState()
 
   return (
-    <div className="App">
-        <div className="h-screen w-1/3 flex flex-col justify-end mx-auto">
+    <div className="App bg-pink-100">
+        <div className="h-screen w-1/3 flex flex-col py-10 mx-auto">
           <Header />
-          {user ? <Messages/> :<Login setUser={setUser}/>}
+          {user ? <Messages user={user}/> :<Login setUser={setUser}/>}
           <SendBar user={user}/>
         </div>
     </div>
